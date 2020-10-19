@@ -6,4 +6,5 @@ USER root
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && \
     dpkg --force-all -i erlang-solutions_2.0_all.deb && \
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y esl-erlang elixir nodejs inotify-tools
+    DEBIAN_FRONTEND=noninteractive apt-get install -y esl-erlang elixir nodejs inotify-tools && \
+    mix --force local.hex && mix archive.install hex phx_new
